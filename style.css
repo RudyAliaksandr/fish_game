@@ -83,7 +83,6 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Мобильная адаптация */
 @media (max-width: 600px) {
   h1 {
     font-size: 2rem;
@@ -104,6 +103,66 @@ h1 {
   #start {
     width: 100%;
   }
+}
+
+/* Волны (фон) */
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 200%;
+  background: url('https://i.ibb.co/7bQQYkX/wave.png') repeat-x;
+  background-size: contain;
+  animation: waveAnim 10s linear infinite;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.wave2 {
+  bottom: 10px;
+  animation: waveAnim 15s linear infinite reverse;
+  opacity: 0.4;
+}
+
+/* Анимация волн */
+@keyframes waveAnim {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Кнопка «Старт» — плывёт */
+#start {
+  margin-top: 20px;
+  padding: 14px 36px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  z-index: 10;
+  position: relative;
+}
+
+#start:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Плавание кнопки */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
 }
 
 /* Анимация появления */
