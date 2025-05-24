@@ -134,6 +134,34 @@ h1 {
     transform: translateY(0);
   }
 }
+.fish, .shark {
+  position: absolute;
+  bottom: 30px;
+  height: 80px;
+}
+
+/* Влево */
+.swim-left {
+  animation: swimLeft 10s linear infinite;
+  left: 100%;
+}
+
+/* Вправо */
+.swim-right {
+  animation: swimRight 12s linear infinite;
+  left: -100px;
+  transform: scaleX(-1); /* отразить по горизонтали */
+}
+
+@keyframes swimLeft {
+  0% { left: 100%; }
+  100% { left: -100px; }
+}
+
+@keyframes swimRight {
+  0% { left: -100px; }
+  100% { left: 100%; }
+}
 
 
 
