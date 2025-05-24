@@ -23,7 +23,7 @@ h1 {
   animation: fadeIn 1s ease forwards;
 }
 
-/* Игровая область */
+/* Главный контейнер */
 #game {
   width: 100vw;
   height: 100vh;
@@ -35,6 +35,50 @@ h1 {
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
+}
+
+/* Игровая зона */
+#play-area {
+  width: 800px;
+  height: 400px;
+  margin: 20px auto;
+  background: rgba(0, 100, 150, 0.3);
+  border: 4px solid white;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Рыбки и акулы */
+.fish, .shark {
+  position: absolute;
+  bottom: 30px;
+  height: 80px;
+  pointer-events: none;
+}
+
+/* Движение влево */
+.swim-left {
+  animation: swimLeft 10s linear infinite;
+  left: 100%;
+}
+
+/* Движение вправо */
+.swim-right {
+  animation: swimRight 12s linear infinite;
+  left: -100px;
+  transform: scaleX(-1); /* отражение по горизонтали */
+}
+
+/* Анимации движения */
+@keyframes swimLeft {
+  0% { left: 100%; }
+  100% { left: -100px; }
+}
+
+@keyframes swimRight {
+  0% { left: -100px; }
+  100% { left: 100%; }
 }
 
 /* Контейнер с кнопкой и заголовком */
@@ -50,14 +94,7 @@ h1 {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Рыбки */
-.fish {
-  width: 50px;
-  position: absolute;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
+/* Эффекты при наведении */
 .fish:hover {
   transform: scale(1.2);
   opacity: 0.8;
@@ -70,7 +107,7 @@ h1 {
   animation: fadeIn 1.5s ease forwards;
 }
 
-/* Кнопка Старт и Назад (общий стиль) */
+/* Кнопки */
 #start, #back {
   margin-top: 20px;
   padding: 14px 36px;
@@ -117,13 +154,14 @@ h1 {
   }
 }
 
-/* Анимации */
+/* Анимация плавания кнопок */
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
   100% { transform: translateY(0); }
 }
 
+/* Анимация появления */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -133,34 +171,6 @@ h1 {
     opacity: 1;
     transform: translateY(0);
   }
-}
-.fish, .shark {
-  position: absolute;
-  bottom: 30px;
-  height: 80px;
-}
-
-/* Влево */
-.swim-left {
-  animation: swimLeft 10s linear infinite;
-  left: 100%;
-}
-
-/* Вправо */
-.swim-right {
-  animation: swimRight 12s linear infinite;
-  left: -100px;
-  transform: scaleX(-1); /* отразить по горизонтали */
-}
-
-@keyframes swimLeft {
-  0% { left: 100%; }
-  100% { left: -100px; }
-}
-
-@keyframes swimRight {
-  0% { left: -100px; }
-  100% { left: 100%; }
 }
 
 
