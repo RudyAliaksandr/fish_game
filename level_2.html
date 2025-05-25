@@ -12,11 +12,15 @@
     <div id="timer">Время: 30</div>
     <div id="score">Счёт: 0</div>
     <div id="play-area">
-      <img id="fish" src="fish.png" class="fish" alt="Рыбка">
-      <img id="shark" src="shark.png" class="shark" alt="Акула">
+      <img id="fish" src="pictures/fish.png" class="fish" alt="Рыбка">
+      <img id="shark" src="pictures/shark.png" class="shark" alt="Акула">
     </div>
 
     <button id="back" onclick="window.location.href='index.html'">Назад в меню</button>
+    <div id="congrats" class="hidden">
+    <img src="pictures/congratulations.png" alt="Поздравляем!" id="congrats-img">
+    <button id="next-level" onclick="goToNextLevel()">Следующий уровень</button>
+    </div>
   </div>
 
   <script src="level1.js"></script>

@@ -29,7 +29,7 @@ h1 {
   height: 100vh;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-    url('background.png');
+    url('pictures/background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -49,10 +49,19 @@ h1 {
   overflow: hidden;
 }
 
+.fish {
+  height: 70px;
+  width: auto; /* сохраняет пропорции */
+}
+
+.shark {
+  height: 100px;
+  width: auto;
+}
+
 /* Рыбки и акулы */
 .fish, .shark {
   position: absolute;
-  height: 80px;
   pointer-events: auto;
 }
 
@@ -193,5 +202,39 @@ h1 {
   text-shadow: 1px 1px 2px #000;
 }
 
+#congrats {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 20;
+}
 
+#congrats-img {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+#next-level {
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  border: 2px solid white;
+  background-color: #22a6b3;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#next-level:hover {
+  background-color: #1e90ff;
+}
+
+.hidden {
+  display: none;
+}
 
